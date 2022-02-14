@@ -94,6 +94,8 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}slow [video/vn]
 │ • ${prefix}bass [video/vn]
 │ • ${prefix}nightcore [video/vn]
+│ • ${prefix}tomp3 [video]
+│ • ${prefix}toimg [sticker]
 │
 ├ *Education*
 │ • ${prefix}nuliskiri [text]
