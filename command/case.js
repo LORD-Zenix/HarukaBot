@@ -900,6 +900,35 @@ case 'toimg':{
 					})
 					}
 					break   
+case 'tomp3':
+
+              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
+
+					kurr.updatePresence(from, Presence.composing)					if (!isQuotedVideo) return reply('Reply Video Nya Kak')
+
+					sticWait(from)
+
+					encmediad = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+
+					mediad = await kurr.downloadAndSaveMediaMessage(encmediad)
+
+					ran = getRandom('.mp4')
+
+					exec(`ffmpeg -i ${mediad} ${ran}`, (err) => {
+
+						fs.unlinkSync(mediad)
+
+						if (err) return reply(mess.error.api)
+
+						mhee = fs.readFileSync(ran)
+
+						kurr.sendMessage(from, mhee, audio, { mimetype: 'audio/mp4', duration: 359996400, quoted: mek })
+
+						fs.unlinkSync(ran)
+
+					})
+
+					break
 case 'nuliskiri':{
 									if (args.length < 1) return reply(`Kirim perintah *${prefix}nuliskiri* teks`)
 									reply(lang.wait())
